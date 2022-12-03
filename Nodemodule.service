@@ -1,0 +1,16 @@
+[Unit]
+Description=Making something
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+ExecStart=/home/jacoblloyd/.volta/bin/node /var/webapp/src/index.js
+User=jacob-final
+Group=jacob-final
+Restart=always
+RestartSec=15
+TimeoutStopSec=90
+SyslogIdentifier=Hello_web
+
+[Install]
+WantedBy=multi-user.target
